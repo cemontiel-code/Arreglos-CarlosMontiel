@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listado de estudiantes</title>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/pulse/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Lista de estudiantes - notas</a>
+            <a class="navbar-brand" href="#"> <h2>Carlos montiel</h2></a>
+            <a class="navbar-brand" href="#"><h3>CODERHOUSE</h3></a>
+        </div>
+    </nav>
+
+    <div  class="jumbotron text-center bg-secondary">
+        <p>En este programa se calcula la nota final del estudiante <br> basados en las notas la previas 3 entregas, donde la notas individuales estan en base a 10</p>
+    </div>
+    
+    <div class="container-fluid">
+        <form action="#">
+            <div class="container-fluid">
+                <div>
+                    <label for="DNI">DNI </label>
+                    <label for="Apellido de estudiamte">Apellido </label>
+                    <label for="nombre de estudiamte">Nombre </label>
+                </div>
+                
+                <div>
+                    <input type="text"  id="DNI" placeholder="DNI">
+                    <input type="text"  id="lName" placeholder="Apellido">
+                    <input type="text"  id="name" placeholder="Nombres">
+                </div>
+                
+            </div>
+        
+        <hr>
+        <label for="nombre de estudiamte">primera entrega (25% de la nota final ) </label>
+        <br>
+        <input type="number"  id="grade1" max="10" min="0" value="0" >
+
+        <hr>
+        <label for="nombre de estudiamte">segunda entrega (25% de la nota final ) </label>
+        <br>
+        <input type="number"  id="grade2"  max="10" min="0" value="0" >
+        
+        <hr>
+        <label for="nombre de estudiamte">tercera entrega (50% de la nota final ) </label>
+        <br>
+        <input type="number"  id="grade3"  max="10" min="0" value="0" >
+        </form>
+        <hr>
+        <div class="container-fluid">
+            <button class="btn btn-primary" onclick="determinarNota()"> hacer click aqui para calcular nota final del estudiante</button>
+            <button class="btn btn-success" onclick="filtarListaApr()" > filtar lista por estudiantes que aprovaron </button>
+            <button class="btn btn-warning" onclick="filtarListaDes()" > filtar lista por estudiantes que no aprovaron </button>
+            <button class="btn btn-info" onclick="ordenarLista()"   > ordenadar lista por el Apellido</button>
+        </div>
+        
+        <hr>
+        
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>DNI</th>
+                    <th>Apellido</th>
+                    <th>Nombre</th>
+                    <th>1ra Entrega</th>
+                    <th>2da Entrega</th>
+                    <th>3ra Entrega</th>
+                    <th>Nota Final</th>
+                    <th>mensaje</th>
+                </tr>
+            </thead>
+            <tbody id="outputTable">
+
+            </tbody>
+        </table>
+
+</div>
+    
+    
+</body>
+</html>
